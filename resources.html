@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Resources - Science Capital SA</title>
+    <meta name="description" content="Comprehensive teacher resources, lesson plans, training materials, and support for CAPS-aligned science education in South African schools.">
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-primary': '#008080',
+                        'gold-accent': '#FFB000',
+                        'royal-blue': '#1e40af'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="h-8 w-8 bg-teal-primary rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SC</span>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">Science Capital SA</span>
+                    </a>
+                    
+                    <div class="hidden md:ml-10 md:flex space-x-8">
+                        <a href="curriculum.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">CAPS Curriculum</a>
+                        <a href="products.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">Science Kits</a>
+                        <a href="institutional.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">For Schools</a>
+                        <a href="resources.html" class="text-teal-primary border-b-2 border-teal-primary px-3 py-2 text-sm font-medium">Teacher Resources</a>
+                        <a href="support.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">Support</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative text-gray-500 hover:text-gray-700 p-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-gold-accent text-black text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+                    </a>
+                    <a href="login.html" class="bg-teal-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-600 transition-colors">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-teal-primary to-royal-blue text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Empowering Science Educators
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-100 max-w-4xl mx-auto">
+                    Comprehensive resources, training, and support to help South African teachers deliver exceptional science education with confidence.
+                </p>
+                
+                <!-- Quick Access -->
+                <div class="flex flex-wrap justify-center gap-4 mt-12">
+                    <a href="#lesson-plans" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-colors">
+                        <i class="fas fa-book-open mr-2"></i>Lesson Plans
+                    </a>
+                    <a href="#training" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-colors">
+                        <i class="fas fa-graduation-cap mr-2"></i>Training Programs
+                    </a>
+                    <a href="#assessments" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-colors">
+                        <i class="fas fa-clipboard-check mr-2"></i>Assessments
+                    </a>
+                    <a href="#safety" class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-colors">
+                        <i class="fas fa-shield-alt mr-2"></i>Safety Guidelines
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Categories -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Complete Resource Library</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Everything you need to successfully implement hands-on science education in your classroom, aligned with CAPS curriculum requirements.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Lesson Plans -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showResourceDetails('lesson-plans')">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-book-open text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Lesson Plans</h3>
+                        <p class="text-blue-700 font-semibold mb-2">200+ Ready-to-Use Plans</p>
+                        <p class="text-gray-600 text-sm mb-4">Complete CAPS-aligned lesson plans with timing, objectives, and assessment criteria.</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="text-gray-700">• Grade-specific content</div>
+                            <div class="text-gray-700">• Detailed instructions</div>
+                            <div class="text-gray-700">• Assessment rubrics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Training Materials -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showResourceDetails('training')">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Training Programs</h3>
+                        <p class="text-green-700 font-semibold mb-2">Professional Development</p>
+                        <p class="text-gray-600 text-sm mb-4">Comprehensive training workshops and certification programs for science educators.</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="text-gray-700">• Online & in-person options</div>
+                            <div class="text-gray-700">• CPD points awarded</div>
+                            <div class="text-gray-700">• Certification available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Assessment Tools -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showResourceDetails('assessments')">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clipboard-check text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Assessment Tools</h3>
+                        <p class="text-orange-700 font-semibold mb-2">Comprehensive Evaluation</p>
+                        <p class="text-gray-600 text-sm mb-4">Formative and summative assessments aligned with CAPS requirements.</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="text-gray-700">• Rubrics & checklists</div>
+                            <div class="text-gray-700">• Practical assessments</div>
+                            <div class="text-gray-700">• Progress tracking</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safety Resources -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="showResourceDetails('safety')">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Safety Guidelines</h3>
+                        <p class="text-purple-700 font-semibold mb-2">Risk Management</p>
+                        <p class="text-gray-600 text-sm mb-4">Comprehensive safety protocols and risk assessments for all experiments.</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="text-gray-700">• Age-appropriate protocols</div>
+                            <div class="text-gray-700">• Emergency procedures</div>
+                            <div class="text-gray-700">• Equipment maintenance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lesson Plans Section -->
+    <section id="lesson-plans" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">CAPS-Aligned Lesson Plans</h2>
+                <p class="text-xl text-gray-600">
+                    Download ready-to-use lesson plans that seamlessly integrate with your science kits
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Featured Lesson Plan -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-flask text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Chemical Reactions Investigation</h3>
+                                <p class="text-blue-600 font-semibold">Grade 8 • Natural Sciences • 60 minutes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-3">Learning Outcomes</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• Identify signs of chemical reactions</li>
+                                    <li>• Distinguish chemical from physical changes</li>
+                                    <li>• Apply conservation of mass principle</li>
+                                    <li>• Record observations scientifically</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-3">CAPS Alignment</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• Matter & Materials strand</li>
+                                    <li>• Assessment Standard 2.3</li>
+                                    <li>• Scientific Skills & Processes</li>
+                                    <li>• Cross-curricular Mathematics</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Lesson Structure</h4>
+                            <div class="grid grid-cols-4 gap-4 text-sm">
+                                <div>
+                                    <div class="font-semibold text-teal-600">Introduction</div>
+                                    <div class="text-gray-600">10 min</div>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-teal-600">Investigation</div>
+                                    <div class="text-gray-600">35 min</div>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-teal-600">Discussion</div>
+                                    <div class="text-gray-600">10 min</div>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-teal-600">Assessment</div>
+                                    <div class="text-gray-600">5 min</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <button class="flex-1 bg-teal-primary text-white py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors">
+                                <i class="fas fa-download mr-2"></i>
+                                Download Full Lesson Plan
+                            </button>
+                            <button class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                                <i class="fas fa-eye mr-2"></i>
+                                Preview
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson Plan Library -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Lesson Plan Library</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="p-4 border border-gray-200 rounded-lg hover:border-teal-300 transition-colors cursor-pointer">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-gray-900">Acids & Bases Testing</h4>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Grade 9</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Investigate pH using natural indicators</p>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>45 minutes</span>
+                                <span><i class="fas fa-download mr-1"></i>234 downloads</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 border border-gray-200 rounded-lg hover:border-teal-300 transition-colors cursor-pointer">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-gray-900">Atomic Structure Models</h4>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Grade 8</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Build 3D models of atoms and molecules</p>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>60 minutes</span>
+                                <span><i class="fas fa-download mr-1"></i>187 downloads</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-4 border border-gray-200 rounded-lg hover:border-teal-300 transition-colors cursor-pointer">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-gray-900">Cell Structure Investigation</h4>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Grade 7</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Microscopy and cell identification</p>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>50 minutes</span>
+                                <span><i class="fas fa-download mr-1"></i>156 downloads</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <a href="resources/lesson-plans.html" class="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors block text-center">
+                            View All Lesson Plans (200+)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs -->
+    <section id="training" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Development Programs</h2>
+                <p class="text-xl text-gray-600">
+                    Enhance your teaching skills and confidence with our comprehensive training programs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Empowering Educators</h3>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Our training programs are designed specifically for South African educators, addressing the unique challenges of implementing hands-on science education in diverse classroom environments.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-users text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Interactive Workshops</h4>
+                                <p class="text-gray-600">Hands-on training sessions where you experience the experiments as your students would.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-laptop text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Online Learning Platform</h4>
+                                <p class="text-gray-600">Self-paced modules accessible 24/7 with video demonstrations and interactive assessments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">CPD Certification</h4>
+                                <p class="text-gray-600">Earn Continuing Professional Development points recognized by SACE and education departments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-6">Upcoming Training Sessions</h4>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm border-l-4 border-green-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <h5 class="font-semibold text-gray-900">Foundation Phase Science Mastery</h5>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Online</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Grades R-3 • 15 March 2024 • 9:00-15:00</p>
+                            <p class="text-xs text-gray-500">Learn age-appropriate investigation techniques and safety protocols</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm border-l-4 border-blue-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <h5 class="font-semibold text-gray-900">Chemistry Lab Safety Workshop</h5>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Johannesburg</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">All Grades • 22 March 2024 • 9:00-16:00</p>
+                            <p class="text-xs text-gray-500">Comprehensive safety training for chemical experiments</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm border-l-4 border-purple-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <h5 class="font-semibold text-gray-900">FET Physics Investigations</h5>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">Cape Town</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">Grades 10-12 • 5 April 2024 • 8:30-16:30</p>
+                            <p class="text-xs text-gray-500">Advanced physics practicals and equipment mastery</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button class="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Book Training Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Tools -->
+    <section id="assessments" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Assessment & Evaluation Tools</h2>
+                <p class="text-xl text-gray-600">
+                    Comprehensive assessment resources aligned with CAPS requirements and best practices
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Practical Assessment -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hands-helping text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Practical Assessment Rubrics</h3>
+                    </div>
+                    
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li>• Skills-based assessment criteria</li>
+                        <li>• Observation checklists</li>
+                        <li>• Lab safety compliance tracking</li>
+                        <li>• Teamwork evaluation rubrics</li>
+                        <li>• Equipment handling assessments</li>
+                    </ul>
+                    
+                    <button class="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                        <i class="fas fa-download mr-2"></i>
+                        Download Templates
+                    </button>
+                </div>
+
+                <!-- Knowledge Assessment -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-brain text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Knowledge Assessments</h3>
+                    </div>
+                    
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li>• Pre & post experiment quizzes</li>
+                        <li>• Conceptual understanding tests</li>
+                        <li>• Scientific vocabulary assessments</li>
+                        <li>• Problem-solving scenarios</li>
+                        <li>• Cross-curricular connections</li>
+                    </ul>
+                    
+                    <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-download mr-2"></i>
+                        Access Question Banks
+                    </button>
+                </div>
+
+                <!-- Portfolio Assessment -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-folder-open text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Portfolio Development</h3>
+                    </div>
+                    
+                    <ul class="text-sm text-gray-700 space-y-2 mb-6">
+                        <li>• Lab report templates</li>
+                        <li>• Scientific drawing guidelines</li>
+                        <li>• Data collection sheets</li>
+                        <li>• Reflection prompts</li>
+                        <li>• Progress tracking tools</li>
+                    </ul>
+                    
+                    <button class="w-full bg-purple-500 text-white py-3 rounded-lg font-semibold hover:bg-purple-600 transition-colors">
+                        <i class="fas fa-download mr-2"></i>
+                        Get Portfolio Tools
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Guidelines -->
+    <section id="safety" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Safety First in Science Education</h2>
+                <p class="text-xl text-gray-600">
+                    Comprehensive safety protocols to ensure secure learning environments for all students
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Age-Appropriate Safety Protocols</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-blue-600 font-bold">R-6</span>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-900">Foundation & Intermediate Phase</h4>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Basic safety awareness training</li>
+                                <li>• Simple equipment handling rules</li>
+                                <li>• Adult supervision requirements</li>
+                                <li>• Safe disposal of materials</li>
+                                <li>• Emergency contact procedures</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-orange-600 font-bold">7-9</span>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-900">Senior Phase</h4>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Chemical safety protocols</li>
+                                <li>• Personal protective equipment</li>
+                                <li>• Laboratory hygiene standards</li>
+                                <li>• Risk assessment procedures</li>
+                                <li>• Incident reporting systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border border-gray-200 rounded-lg p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-purple-600 font-bold">10-12</span>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-900">FET Phase</h4>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Advanced chemical handling</li>
+                                <li>• Equipment maintenance protocols</li>
+                                <li>• Independent safety assessment</li>
+                                <li>• Peer safety monitoring</li>
+                                <li>• University preparation standards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-exclamation-triangle text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">Emergency Procedures</h3>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-red-700 mb-2">
+                                <i class="fas fa-fire mr-2"></i>Fire Emergency
+                            </h4>
+                            <p class="text-sm text-gray-700">Immediate evacuation procedures, fire extinguisher locations, and emergency contact protocols.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-orange-700 mb-2">
+                                <i class="fas fa-flask mr-2"></i>Chemical Spills
+                            </h4>
+                            <p class="text-sm text-gray-700">Containment procedures, neutralization protocols, and cleanup safety measures.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-blue-700 mb-2">
+                                <i class="fas fa-user-injured mr-2"></i>Student Injury
+                            </h4>
+                            <p class="text-sm text-gray-700">First aid procedures, incident documentation, and parent/guardian notification protocols.</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-purple-700 mb-2">
+                                <i class="fas fa-tools mr-2"></i>Equipment Failure
+                            </h4>
+                            <p class="text-sm text-gray-700">Safe shutdown procedures, alternative activity options, and technical support contacts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition-colors">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Safety Manual
+                        </button>
+                        
+                        <button class="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                            <i class="fas fa-video mr-2"></i>
+                            Watch Safety Videos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Access -->
+    <section class="py-20 bg-teal-primary text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Science Teaching?</h2>
+            <p class="text-xl mb-8 text-teal-100">
+                Join thousands of South African educators who have already enhanced their science teaching with our comprehensive resources and support.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl font-bold mb-2">2,500+</div>
+                    <div class="text-teal-100">Teachers Trained</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-3xl font-bold mb-2">95%</div>
+                    <div class="text-teal-100">Satisfaction Rate</div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="resources/register.html" class="bg-gold-accent text-black px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-user-plus mr-2"></i>
+                    Create Free Account
+                </a>
+                <a href="resources/training.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-teal-primary transition-colors inline-flex items-center justify-center">
+                    <i class="fas fa-calendar mr-2"></i>
+                    Book Training Session
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-8 w-8 bg-teal-primary rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SC</span>
+                        </div>
+                        <span class="text-xl font-bold">Science Capital SA</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Empowering science educators across South Africa.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="resources/lesson-plans.html" class="text-gray-400 hover:text-white">Lesson Plans</a></li>
+                        <li><a href="resources/assessments.html" class="text-gray-400 hover:text-white">Assessment Tools</a></li>
+                        <li><a href="resources/safety.html" class="text-gray-400 hover:text-white">Safety Guidelines</a></li>
+                        <li><a href="resources/videos.html" class="text-gray-400 hover:text-white">Video Library</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Training</h3>
+                    <ul class="space-y-2">
+                        <li><a href="resources/workshops.html" class="text-gray-400 hover:text-white">Workshops</a></li>
+                        <li><a href="resources/online.html" class="text-gray-400 hover:text-white">Online Courses</a></li>
+                        <li><a href="resources/certification.html" class="text-gray-400 hover:text-white">Certification</a></li>
+                        <li><a href="resources/cpd.html" class="text-gray-400 hover:text-white">CPD Points</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <div>011 234 5678</div>
+                        <div>training@sciencecapital.co.za</div>
+                        <div>Johannesburg, South Africa</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Science Capital SA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function showResourceDetails(category) {
+            // Smooth scroll to the relevant section
+            const element = document.getElementById(category);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
+        // Cart counter
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+        
+        updateCartCount();
+        
+        // Resource download tracking (for analytics)
+        function trackDownload(resourceType) {
+            // In a real application, this would send analytics data
+            console.log(`Resource downloaded: ${resourceType}`);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

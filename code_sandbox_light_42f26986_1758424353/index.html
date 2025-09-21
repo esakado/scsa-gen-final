@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Capital SA - Premium Educational Science Kits | CAPS Aligned</title>
+    <meta name="description" content="Premium CAPS-aligned science kits for South African schools. Bridge the 90% science lab gap with high-quality educational experiments and resources.">
+    <meta name="keywords" content="science kits, CAPS curriculum, South African schools, educational science, laboratory equipment, teacher resources">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧪%3C/text%3E%3C/svg%3E">
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-primary': '#008080',
+                        'gold-accent': '#FFB000',
+                        'royal-blue': '#1e40af',
+                        'sa-green': '#007A33',
+                        'sa-gold': '#FFD700'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="h-8 w-8 bg-teal-primary rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SC</span>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">Science Capital SA</span>
+                    </div>
+                    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:ml-10 md:flex space-x-8">
+                        <a href="curriculum.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">CAPS Curriculum</a>
+                        <a href="products.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">Science Kits</a>
+                        <a href="institutional.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">For Schools</a>
+                        <a href="resources.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">Teacher Resources</a>
+                        <a href="support.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">Support</a>
+                    </div>
+                </div>
+                
+                <!-- Right Side Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 hover:text-gray-700 p-2" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="cart.html" class="relative text-gray-500 hover:text-gray-700 p-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-gold-accent text-black text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+                    </a>
+                    <a href="login.html" class="bg-teal-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-600 transition-colors">Login</a>
+                    <button class="md:hidden text-gray-500 hover:text-gray-700 p-2" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="curriculum.html" class="block px-3 py-2 text-gray-900 hover:text-teal-primary font-medium">CAPS Curriculum</a>
+                <a href="products.html" class="block px-3 py-2 text-gray-900 hover:text-teal-primary font-medium">Science Kits</a>
+                <a href="institutional.html" class="block px-3 py-2 text-gray-900 hover:text-teal-primary font-medium">For Schools</a>
+                <a href="resources.html" class="block px-3 py-2 text-gray-900 hover:text-teal-primary font-medium">Teacher Resources</a>
+                <a href="support.html" class="block px-3 py-2 text-gray-900 hover:text-teal-primary font-medium">Support</a>
+            </div>
+        </div>
+        
+        <!-- Search Overlay -->
+        <div id="search-overlay" class="hidden absolute top-16 left-0 right-0 bg-white shadow-lg border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 py-4">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Search by grade, subject, or topic (e.g., 'Grade 8 Chemistry')" 
+                           class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-primary">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+                <div class="mt-2 flex flex-wrap gap-2">
+                    <span class="text-sm text-gray-600">Quick filters:</span>
+                    <button class="bg-gray-100 hover:bg-teal-100 px-2 py-1 rounded text-sm">Foundation Phase</button>
+                    <button class="bg-gray-100 hover:bg-teal-100 px-2 py-1 rounded text-sm">Natural Sciences</button>
+                    <button class="bg-gray-100 hover:bg-teal-100 px-2 py-1 rounded text-sm">Physical Sciences</button>
+                    <button class="bg-gray-100 hover:bg-teal-100 px-2 py-1 rounded text-sm">Life Sciences</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-teal-primary to-royal-blue text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                        Bridge the Science Lab Gap in 
+                        <span class="text-gold-accent">South African Schools</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-100">
+                        Premium CAPS-aligned science kits bringing world-class laboratory experiences to every classroom. Trusted by over 500+ schools nationwide.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="curriculum.html" class="bg-gold-accent text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors flex items-center justify-center">
+                            <i class="fas fa-graduation-cap mr-2"></i>
+                            Explore CAPS Curriculum
+                        </a>
+                        <a href="institutional.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-teal-primary transition-colors flex items-center justify-center">
+                            <i class="fas fa-school mr-2"></i>
+                            Get School Quote
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/20 rounded-lg p-4 text-center">
+                                <div class="text-3xl font-bold text-gold-accent">90%</div>
+                                <div class="text-sm">Schools Without Labs</div>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-4 text-center">
+                                <div class="text-3xl font-bold text-gold-accent">500+</div>
+                                <div class="text-sm">Partner Schools</div>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-4 text-center">
+                                <div class="text-3xl font-bold text-gold-accent">100%</div>
+                                <div class="text-sm">CAPS Aligned</div>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-4 text-center">
+                                <div class="text-3xl font-bold text-gold-accent">12</div>
+                                <div class="text-sm">Grade Levels</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAPS Curriculum Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">100% CAPS Curriculum Aligned</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Every science kit is meticulously designed to align with South African CAPS curriculum requirements, 
+                    ensuring seamless integration into your lesson plans.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Foundation Phase -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='curriculum/foundation.html'">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-seedling text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Foundation Phase</h3>
+                        <p class="text-blue-700 font-semibold mb-2">Grades R-3</p>
+                        <p class="text-gray-600 text-sm mb-4">Introduction to scientific thinking through hands-on exploration and discovery.</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="text-gray-700">• Basic observation skills</div>
+                            <div class="text-gray-700">• Simple experiments</div>
+                            <div class="text-gray-700">• Safety awareness</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate Phase -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='curriculum/intermediate.html'">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Intermediate Phase</h3>
+                        <p class="text-green-700 font-semibold mb-2">Grades 4-6</p>
+                        <p class="text-gray-600 text-sm mb-4">Structured investigations building scientific methodology and critical thinking.</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="text-gray-700">• Scientific method</div>
+                            <div class="text-gray-700">• Data collection</div>
+                            <div class="text-gray-700">• Natural Sciences</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Senior Phase -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='curriculum/senior.html'">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-microscope text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Senior Phase</h3>
+                        <p class="text-orange-700 font-semibold mb-2">Grades 7-9</p>
+                        <p class="text-gray-600 text-sm mb-4">Advanced experiments preparing students for specialized science studies.</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="text-gray-700">• Natural Sciences</div>
+                            <div class="text-gray-700">• Technology integration</div>
+                            <div class="text-gray-700">• Advanced investigations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FET Phase -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200 hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='curriculum/fet.html'">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-atom text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">FET Phase</h3>
+                        <p class="text-purple-700 font-semibold mb-2">Grades 10-12</p>
+                        <p class="text-gray-600 text-sm mb-4">Specialized science disciplines with university-level preparation.</p>
+                        <div class="space-y-1 text-sm">
+                            <div class="text-gray-700">• Physical Sciences</div>
+                            <div class="text-gray-700">• Life Sciences</div>
+                            <div class="text-gray-700">• Matric preparation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Science Kits</h2>
+                <p class="text-xl text-gray-600">
+                    Discover our most popular CAPS-aligned science kits trusted by educators nationwide
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Chemistry Starter Kit -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer" onclick="window.location.href='products/chemistry-starter-kit.html'">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-flask text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-2 py-1 rounded">Grade 8-9</span>
+                            <span class="text-teal-primary font-bold">R 2,450</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Chemistry Starter Kit</h3>
+                        <p class="text-gray-600 mb-4">Complete introduction to chemical reactions, acids & bases, and molecular structure. Perfect for Natural Sciences curriculum.</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                CAPS Topics: Atoms & Molecules, Chemical Reactions
+                            </div>
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                25+ experiments included
+                            </div>
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Teacher guide & worksheets
+                            </div>
+                        </div>
+                        <button class="w-full bg-teal-primary text-white py-2 rounded-lg hover:bg-teal-600 transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Biology Investigation Kit -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer" onclick="window.location.href='products/biology-investigation-kit.html'">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center">
+                        <i class="fas fa-dna text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-green-100 text-green-800 text-sm font-semibold px-2 py-1 rounded">Grade 10-12</span>
+                            <span class="text-teal-primary font-bold">R 3,200</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Biology Investigation Kit</h3>
+                        <p class="text-gray-600 mb-4">Advanced life sciences investigations covering genetics, ecology, and human biology for FET Life Sciences.</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                CAPS Topics: Genetics, Ecology, Human Systems
+                            </div>
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Microscopy equipment included
+                            </div>
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Matric exam preparation
+                            </div>
+                        </div>
+                        <button class="w-full bg-teal-primary text-white py-2 rounded-lg hover:bg-teal-600 transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Physics Lab Essentials -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer" onclick="window.location.href='products/physics-lab-essentials.html'">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                        <i class="fas fa-magnet text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="bg-orange-100 text-orange-800 text-sm font-semibold px-2 py-1 rounded">Grade 10-12</span>
+                            <span class="text-teal-primary font-bold">R 3,850</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Physics Lab Essentials</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive physics investigations covering mechanics, electricity, and waves for Physical Sciences curriculum.</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                CAPS Topics: Mechanics, Electricity, Waves
+                            </div>
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Precision instruments included
+                            </div>
+                            <div class="flex items-center text-sm text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                University preparation focus
+                            </div>
+                        </div>
+                        <button class="w-full bg-teal-primary text-white py-2 rounded-lg hover:bg-teal-600 transition-colors">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="products.html" class="bg-teal-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-600 transition-colors inline-flex items-center">
+                    View All Science Kits
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Schools Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Designed for South African Schools</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        We understand the unique challenges facing SA educators. Our institutional solutions are built specifically for the South African educational environment.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-money-bill-wave text-teal-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Flexible Payment Terms</h3>
+                                <p class="text-gray-600">30/60/90 day payment options, EFT, and school account integration. Budget-friendly solutions for every institution.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-truck text-teal-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Nationwide Delivery</h3>
+                                <p class="text-gray-600">Reliable delivery to all 9 provinces, including rural areas. Special handling for remote schools.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-users text-teal-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Teacher Training & Support</h3>
+                                <p class="text-gray-600">Comprehensive training programs, ongoing support, and professional development opportunities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-teal-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Department Approved</h3>
+                                <p class="text-gray-600">All kits meet Department of Basic Education standards and CAPS curriculum requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="institutional.html" class="bg-gold-accent text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition-colors inline-flex items-center">
+                            Get School Pricing
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Why Schools Choose Us</h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-teal-primary mb-2">500+</div>
+                            <div class="text-gray-700">Partner Schools</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-teal-primary mb-2">98%</div>
+                            <div class="text-gray-700">Teacher Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-teal-primary mb-2">15+</div>
+                            <div class="text-gray-700">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-teal-primary mb-2">24/7</div>
+                            <div class="text-gray-700">Support Available</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-4 bg-white rounded-lg border-l-4 border-teal-primary">
+                        <p class="text-gray-700 italic">
+                            "Science Capital SA has transformed our science teaching. Our learners are now excited about experiments and our matric pass rates have improved by 23%."
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2 font-semibold">
+                            - Mrs. Nkomo, Head of Science, Johannesburg High School
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Trusted by Leading Educational Institutions</h2>
+                <p class="text-xl text-gray-600">Join hundreds of schools already transforming science education</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-sa-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Safety Certified</h3>
+                    <p class="text-gray-600 text-sm">All products meet international safety standards for educational use</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-sa-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Award Winning</h3>
+                    <p class="text-gray-600 text-sm">Recognized for excellence in educational innovation by DBE</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-sa-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Government Partner</h3>
+                    <p class="text-gray-600 text-sm">Official supplier to provincial education departments</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-sa-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-recycle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Sustainability Focused</h3>
+                    <p class="text-gray-600 text-sm">Eco-friendly materials supporting environmental education</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-8 w-8 bg-teal-primary rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SC</span>
+                        </div>
+                        <span class="text-xl font-bold">Science Capital SA</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Bridging the science education gap in South African schools through premium CAPS-aligned educational kits.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Curriculum</h3>
+                    <ul class="space-y-2">
+                        <li><a href="curriculum/foundation.html" class="text-gray-400 hover:text-white">Foundation Phase (R-3)</a></li>
+                        <li><a href="curriculum/intermediate.html" class="text-gray-400 hover:text-white">Intermediate Phase (4-6)</a></li>
+                        <li><a href="curriculum/senior.html" class="text-gray-400 hover:text-white">Senior Phase (7-9)</a></li>
+                        <li><a href="curriculum/fet.html" class="text-gray-400 hover:text-white">FET Phase (10-12)</a></li>
+                        <li><a href="curriculum/subjects.html" class="text-gray-400 hover:text-white">Subject Alignment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">For Schools</h3>
+                    <ul class="space-y-2">
+                        <li><a href="institutional/pricing.html" class="text-gray-400 hover:text-white">Bulk Pricing</a></li>
+                        <li><a href="institutional/quote.html" class="text-gray-400 hover:text-white">Get Quote</a></li>
+                        <li><a href="institutional/procurement.html" class="text-gray-400 hover:text-white">Procurement</a></li>
+                        <li><a href="resources/training.html" class="text-gray-400 hover:text-white">Teacher Training</a></li>
+                        <li><a href="support.html" class="text-gray-400 hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>011 234 5678</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>info@sciencecapital.co.za</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Johannesburg, South Africa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">&copy; 2024 Science Capital SA. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="legal/privacy.html" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="legal/terms.html" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="legal/compliance.html" class="text-gray-400 hover:text-white text-sm">POPIA Compliance</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Search overlay toggle
+        function toggleSearch() {
+            const overlay = document.getElementById('search-overlay');
+            const input = document.getElementById('search-input');
+            
+            overlay.classList.toggle('hidden');
+            if (!overlay.classList.contains('hidden')) {
+                input.focus();
+            }
+        }
+        
+        // Cart functionality
+        let cartItems = [];
+        
+        function updateCartCount() {
+            const count = cartItems.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+        
+        // Initialize cart count on page load
+        updateCartCount();
+        
+        // Close search overlay when clicking outside
+        document.addEventListener('click', function(e) {
+            const searchOverlay = document.getElementById('search-overlay');
+            const searchButton = e.target.closest('[onclick="toggleSearch()"]');
+            
+            if (!searchOverlay.contains(e.target) && !searchButton && !searchOverlay.classList.contains('hidden')) {
+                searchOverlay.classList.add('hidden');
+            }
+        });
+        
+        // Search functionality
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            if (query.length > 2) {
+                // Implement search logic here
+                console.log('Searching for:', query);
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

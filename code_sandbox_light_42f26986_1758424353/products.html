@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Kits - Science Capital SA</title>
+    <meta name="description" content="Browse our complete range of CAPS-aligned science kits for South African schools. Foundation to FET phase coverage with bulk pricing available.">
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-primary': '#008080',
+                        'gold-accent': '#FFB000',
+                        'royal-blue': '#1e40af'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="h-8 w-8 bg-teal-primary rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SC</span>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">Science Capital SA</span>
+                    </a>
+                    
+                    <div class="hidden md:ml-10 md:flex space-x-8">
+                        <a href="curriculum.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">CAPS Curriculum</a>
+                        <a href="products.html" class="text-teal-primary border-b-2 border-teal-primary px-3 py-2 text-sm font-medium">Science Kits</a>
+                        <a href="institutional.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">For Schools</a>
+                        <a href="resources.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">Teacher Resources</a>
+                        <a href="support.html" class="text-gray-900 hover:text-teal-primary px-3 py-2 text-sm font-medium">Support</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative text-gray-500 hover:text-gray-700 p-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-gold-accent text-black text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+                    </a>
+                    <a href="login.html" class="bg-teal-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-600 transition-colors">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-teal-primary to-royal-blue text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Complete Science Kit Collection
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-100 max-w-4xl mx-auto">
+                    Premium CAPS-aligned science kits covering all phases of South African education. From Foundation to FET, we have everything you need.
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto">
+                    <div class="relative">
+                        <input type="text" id="product-search" placeholder="Search by grade, subject, or topic (e.g., 'Grade 8 Chemistry')" 
+                               class="w-full pl-12 pr-4 py-4 text-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-accent">
+                        <i class="fas fa-search absolute left-4 top-5 text-gray-400 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters and Products -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-4 mb-8">
+                <!-- Grade Filters -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active" data-filter="all">All Grades</button>
+                    <button class="filter-btn" data-filter="foundation">Foundation (R-3)</button>
+                    <button class="filter-btn" data-filter="intermediate">Intermediate (4-6)</button>
+                    <button class="filter-btn" data-filter="senior">Senior (7-9)</button>
+                    <button class="filter-btn" data-filter="fet">FET (10-12)</button>
+                </div>
+                
+                <!-- Subject Filters -->
+                <div class="flex flex-wrap gap-2 ml-4">
+                    <button class="subject-filter-btn active" data-subject="all">All Subjects</button>
+                    <button class="subject-filter-btn" data-subject="natural-sciences">Natural Sciences</button>
+                    <button class="subject-filter-btn" data-subject="physical-sciences">Physical Sciences</button>
+                    <button class="subject-filter-btn" data-subject="life-sciences">Life Sciences</button>
+                </div>
+                
+                <!-- Sort Options -->
+                <div class="ml-auto">
+                    <select id="sort-select" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-primary">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="grade">Grade Level</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="load-more" class="bg-teal-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors">
+                    Load More Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-8 w-8 bg-teal-primary rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SC</span>
+                        </div>
+                        <span class="text-xl font-bold">Science Capital SA</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Premium CAPS-aligned science kits for South African schools.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Shop by Grade</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html?grade=foundation" class="text-gray-400 hover:text-white">Foundation (R-3)</a></li>
+                        <li><a href="products.html?grade=intermediate" class="text-gray-400 hover:text-white">Intermediate (4-6)</a></li>
+                        <li><a href="products.html?grade=senior" class="text-gray-400 hover:text-white">Senior (7-9)</a></li>
+                        <li><a href="products.html?grade=fet" class="text-gray-400 hover:text-white">FET (10-12)</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="support/help.html" class="text-gray-400 hover:text-white">Help Center</a></li>
+                        <li><a href="support/shipping.html" class="text-gray-400 hover:text-white">Shipping Info</a></li>
+                        <li><a href="support/returns.html" class="text-gray-400 hover:text-white">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <div>011 234 5678</div>
+                        <div>products@sciencecapital.co.za</div>
+                        <div>Johannesburg, South Africa</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Science Capital SA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 'chemistry-starter-kit',
+                name: 'Chemistry Starter Kit',
+                grade: 'senior',
+                subject: 'natural-sciences',
+                price: 2450,
+                originalPrice: 2890,
+                description: 'Complete introduction to chemical reactions, acids & bases, and molecular structure.',
+                experiments: 25,
+                icon: 'fas fa-flask',
+                colors: 'from-blue-400 to-purple-500',
+                popular: true,
+                caps: 'Grade 8-9 • Atoms & Molecules, Chemical Reactions'
+            },
+            {
+                id: 'biology-investigation-kit',
+                name: 'Biology Investigation Kit',
+                grade: 'fet',
+                subject: 'life-sciences',
+                price: 3200,
+                description: 'Advanced life sciences investigations covering genetics, ecology, and human biology.',
+                experiments: 22,
+                icon: 'fas fa-dna',
+                colors: 'from-green-400 to-teal-500',
+                popular: true,
+                caps: 'Grade 10-12 • Genetics, Ecology, Human Systems'
+            },
+            {
+                id: 'physics-lab-essentials',
+                name: 'Physics Lab Essentials',
+                grade: 'fet',
+                subject: 'physical-sciences',
+                price: 3850,
+                description: 'Comprehensive physics investigations covering mechanics, electricity, and waves.',
+                experiments: 28,
+                icon: 'fas fa-magnet',
+                colors: 'from-orange-400 to-red-500',
+                popular: true,
+                caps: 'Grade 10-12 • Mechanics, Electricity, Waves'
+            },
+            {
+                id: 'foundation-science-skills',
+                name: 'Science Skills Starter Kit',
+                grade: 'foundation',
+                subject: 'natural-sciences',
+                price: 850,
+                description: 'Basic observation, sorting, and classification activities for young learners.',
+                experiments: 15,
+                icon: 'fas fa-eye',
+                colors: 'from-blue-400 to-blue-500',
+                caps: 'Grade R-3 • Living & Non-living, Senses'
+            },
+            {
+                id: 'nature-explorer',
+                name: 'Nature Explorer Kit',
+                grade: 'foundation',
+                subject: 'natural-sciences',
+                price: 950,
+                description: 'Discovering plants, animals, and natural environments through hands-on exploration.',
+                experiments: 12,
+                icon: 'fas fa-leaf',
+                colors: 'from-green-400 to-green-500',
+                caps: 'Grade R-3 • Plants, Animals, Weather'
+            },
+            {
+                id: 'matter-materials-kit',
+                name: 'Matter & Materials Kit',
+                grade: 'intermediate',
+                subject: 'natural-sciences',
+                price: 1450,
+                description: 'Exploring properties of materials and their uses in everyday life.',
+                experiments: 20,
+                icon: 'fas fa-cube',
+                colors: 'from-purple-400 to-purple-500',
+                caps: 'Grade 4-6 • Properties, Materials, Mixtures'
+            },
+            {
+                id: 'life-systems-explorer',
+                name: 'Life Systems Explorer',
+                grade: 'intermediate',
+                subject: 'natural-sciences',
+                price: 1650,
+                description: 'Understanding life processes and ecosystems through investigation.',
+                experiments: 18,
+                icon: 'fas fa-seedling',
+                colors: 'from-green-400 to-teal-500',
+                caps: 'Grade 4-6 • Animal Systems, Plant Life, Habitats'
+            },
+            {
+                id: 'energy-change-kit',
+                name: 'Energy & Change Kit',
+                grade: 'intermediate',
+                subject: 'natural-sciences',
+                price: 1750,
+                description: 'Discovering different forms of energy and their effects.',
+                experiments: 22,
+                icon: 'fas fa-bolt',
+                colors: 'from-orange-400 to-red-500',
+                caps: 'Grade 4-6 • Heat, Light, Sound, Movement'
+            },
+            {
+                id: 'advanced-chemistry',
+                name: 'Advanced Chemistry Set',
+                grade: 'senior',
+                subject: 'natural-sciences',
+                price: 2450,
+                description: 'Complete chemical reactions, acids & bases, and molecular structure investigations.',
+                experiments: 25,
+                icon: 'fas fa-flask',
+                colors: 'from-blue-400 to-purple-500',
+                caps: 'Grade 7-9 • Chemical Reactions, Periodic Table'
+            },
+            {
+                id: 'physics-fundamentals',
+                name: 'Physics Fundamentals',
+                grade: 'senior',
+                subject: 'natural-sciences',
+                price: 2350,
+                description: 'Electricity, magnetism, forces, and energy transformations.',
+                experiments: 24,
+                icon: 'fas fa-magnet',
+                colors: 'from-orange-400 to-red-500',
+                caps: 'Grade 8-9 • Forces, Energy, Electricity'
+            },
+            {
+                id: 'microscopy-set',
+                name: 'Advanced Microscopy Set',
+                grade: 'fet',
+                subject: 'life-sciences',
+                price: 4500,
+                description: 'High-quality microscopes and prepared slides for detailed observations.',
+                experiments: 30,
+                icon: 'fas fa-microscope',
+                colors: 'from-purple-400 to-blue-500',
+                caps: 'Grade 10-12 • Cell Structure, Tissues, Organisms'
+            },
+            {
+                id: 'complete-physical-sciences',
+                name: 'Complete Physical Sciences Lab',
+                grade: 'fet',
+                subject: 'physical-sciences',
+                price: 4850,
+                description: 'Comprehensive lab covering chemistry and physics for matric preparation.',
+                experiments: 45,
+                icon: 'fas fa-atom',
+                colors: 'from-blue-500 to-purple-600',
+                caps: 'Grade 10-12 • Complete Physical Sciences Coverage'
+            }
+        ];
+
+        let currentProducts = [...products];
+        let displayedProducts = 0;
+        const productsPerLoad = 8;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            setupFilters();
+            loadProducts();
+            updateCartCount();
+        });
+
+        // Setup filter event listeners
+        function setupFilters() {
+            // Grade filters
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterProducts();
+                });
+            });
+
+            // Subject filters
+            document.querySelectorAll('.subject-filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.subject-filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterProducts();
+                });
+            });
+
+            // Sort
+            document.getElementById('sort-select').addEventListener('change', function() {
+                sortProducts();
+            });
+
+            // Search
+            document.getElementById('product-search').addEventListener('input', function() {
+                searchProducts();
+            });
+
+            // Load more
+            document.getElementById('load-more').addEventListener('click', function() {
+                loadMoreProducts();
+            });
+        }
+
+        // Filter products
+        function filterProducts() {
+            const gradeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            const subjectFilter = document.querySelector('.subject-filter-btn.active').dataset.subject;
+            
+            currentProducts = products.filter(product => {
+                const matchesGrade = gradeFilter === 'all' || product.grade === gradeFilter;
+                const matchesSubject = subjectFilter === 'all' || product.subject === subjectFilter;
+                return matchesGrade && matchesSubject;
+            });
+
+            displayedProducts = 0;
+            document.getElementById('products-grid').innerHTML = '';
+            loadProducts();
+        }
+
+        // Search products
+        function searchProducts() {
+            const query = document.getElementById('product-search').value.toLowerCase();
+            
+            if (query === '') {
+                filterProducts();
+                return;
+            }
+
+            currentProducts = products.filter(product => {
+                return product.name.toLowerCase().includes(query) ||
+                       product.description.toLowerCase().includes(query) ||
+                       product.caps.toLowerCase().includes(query) ||
+                       product.grade.toLowerCase().includes(query) ||
+                       product.subject.toLowerCase().includes(query);
+            });
+
+            displayedProducts = 0;
+            document.getElementById('products-grid').innerHTML = '';
+            loadProducts();
+        }
+
+        // Sort products
+        function sortProducts() {
+            const sortBy = document.getElementById('sort-select').value;
+            
+            switch(sortBy) {
+                case 'price-low':
+                    currentProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    currentProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'grade':
+                    currentProducts.sort((a, b) => {
+                        const gradeOrder = ['foundation', 'intermediate', 'senior', 'fet'];
+                        return gradeOrder.indexOf(a.grade) - gradeOrder.indexOf(b.grade);
+                    });
+                    break;
+                default: // popular
+                    currentProducts.sort((a, b) => (b.popular ? 1 : 0) - (a.popular ? 1 : 0));
+            }
+
+            displayedProducts = 0;
+            document.getElementById('products-grid').innerHTML = '';
+            loadProducts();
+        }
+
+        // Load products
+        function loadProducts() {
+            const grid = document.getElementById('products-grid');
+            const productsToShow = currentProducts.slice(displayedProducts, displayedProducts + productsPerLoad);
+            
+            productsToShow.forEach(product => {
+                const productCard = createProductCard(product);
+                grid.appendChild(productCard);
+            });
+
+            displayedProducts += productsToShow.length;
+
+            // Show/hide load more button
+            const loadMoreBtn = document.getElementById('load-more');
+            if (displayedProducts >= currentProducts.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-block';
+            }
+        }
+
+        // Load more products
+        function loadMoreProducts() {
+            loadProducts();
+        }
+
+        // Create product card
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer';
+            card.onclick = () => window.location.href = `products/${product.id}.html`;
+            
+            const discount = product.originalPrice ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
+            
+            card.innerHTML = `
+                <div class="h-48 bg-gradient-to-br ${product.colors} flex items-center justify-center relative">
+                    <i class="${product.icon} text-white text-6xl"></i>
+                    ${product.popular ? '<div class="absolute top-3 left-3 bg-gold-accent text-black text-xs font-bold px-2 py-1 rounded">Popular</div>' : ''}
+                    ${discount > 0 ? `<div class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">${discount}% Off</div>` : ''}
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="bg-${getGradeColor(product.grade)}-100 text-${getGradeColor(product.grade)}-800 text-sm font-semibold px-2 py-1 rounded">${getGradeLabel(product.grade)}</span>
+                        <span class="text-teal-primary font-bold">R ${product.price.toLocaleString()}</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">${product.name}</h3>
+                    <p class="text-gray-600 mb-3 text-sm line-clamp-2">${product.description}</p>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            ${product.caps}
+                        </div>
+                        <div class="flex items-center text-sm text-gray-700">
+                            <i class="fas fa-flask text-blue-500 mr-2"></i>
+                            ${product.experiments}+ experiments included
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="event.stopPropagation(); addToCart('${product.id}')" class="flex-1 bg-teal-primary text-white py-2 rounded-lg hover:bg-teal-600 transition-colors text-sm font-semibold">
+                            Add to Cart
+                        </button>
+                        <button onclick="event.stopPropagation(); quickView('${product.id}')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors text-sm">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Helper functions
+        function getGradeColor(grade) {
+            const colors = {
+                'foundation': 'blue',
+                'intermediate': 'green',
+                'senior': 'orange',
+                'fet': 'purple'
+            };
+            return colors[grade] || 'gray';
+        }
+
+        function getGradeLabel(grade) {
+            const labels = {
+                'foundation': 'Grade R-3',
+                'intermediate': 'Grade 4-6',
+                'senior': 'Grade 7-9',
+                'fet': 'Grade 10-12'
+            };
+            return labels[grade] || grade;
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // Show success message
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        // Quick view
+        function quickView(productId) {
+            // In a real application, this would open a modal with product details
+            window.location.href = `products/${productId}.html`;
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+
+        // CSS classes for filter buttons
+        const style = document.createElement('style');
+        style.textContent = `
+            .filter-btn, .subject-filter-btn {
+                background: white;
+                border: 2px solid #e5e7eb;
+                color: #6b7280;
+                padding: 8px 16px;
+                border-radius: 8px;
+                font-weight: 500;
+                transition: all 0.2s;
+                cursor: pointer;
+            }
+            .filter-btn.active, .subject-filter-btn.active {
+                background: #008080;
+                border-color: #008080;
+                color: white;
+            }
+            .filter-btn:hover, .subject-filter-btn:hover {
+                border-color: #008080;
+                color: #008080;
+            }
+            .line-clamp-2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
