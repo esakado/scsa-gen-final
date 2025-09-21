@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Starter Kit - Grade 8-9 | Science Capital SA</title>
+    <meta name="description" content="Complete CAPS-aligned chemistry kit for Grades 8-9. 25+ experiments covering atoms, molecules, and chemical reactions. Perfect for Natural Sciences curriculum.">
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/fontawesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-primary': '#008080',
+                        'gold-accent': '#FFB000',
+                        'royal-blue': '#1e40af'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <div class="h-8 w-8 bg-teal-primary rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SC</span>
+                        </div>
+                        <span class="text-xl font-bold text-gray-900">Science Capital SA</span>
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="../cart.html" class="relative text-gray-500 hover:text-gray-700 p-2">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-gold-accent text-black text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+                    </a>
+                    <a href="../login.html" class="bg-teal-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-600 transition-colors">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="../index.html" class="text-gray-600 hover:text-teal-primary">
+                            <i class="fas fa-home mr-2"></i>Home
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <a href="../products.html" class="text-gray-600 hover:text-teal-primary">Science Kits</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <span class="text-gray-900 font-medium">Chemistry Starter Kit</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Product Details -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Product Images -->
+                <div>
+                    <div class="aspect-square bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center mb-4">
+                        <i class="fas fa-flask text-white text-8xl"></i>
+                    </div>
+                    
+                    <!-- Thumbnail Gallery -->
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="aspect-square bg-gradient-to-br from-blue-300 to-blue-400 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-teal-primary">
+                            <i class="fas fa-flask text-white text-2xl"></i>
+                        </div>
+                        <div class="aspect-square bg-gradient-to-br from-purple-300 to-purple-400 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-teal-primary">
+                            <i class="fas fa-vial text-white text-2xl"></i>
+                        </div>
+                        <div class="aspect-square bg-gradient-to-br from-indigo-300 to-indigo-400 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-teal-primary">
+                            <i class="fas fa-microscope text-white text-2xl"></i>
+                        </div>
+                        <div class="aspect-square bg-gradient-to-br from-cyan-300 to-cyan-400 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-teal-primary">
+                            <i class="fas fa-atom text-white text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div>
+                    <div class="mb-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">Grade 8-9</span>
+                            <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded-full">Natural Sciences</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded-full">CAPS Aligned</span>
+                        </div>
+                        <h1 class="text-4xl font-bold text-gray-900 mb-4">Chemistry Starter Kit</h1>
+                        <p class="text-xl text-gray-600 mb-6">
+                            Complete introduction to chemical reactions, acids & bases, and molecular structure. Perfect alignment with Senior Phase Natural Sciences CAPS curriculum requirements.
+                        </p>
+                        
+                        <div class="flex items-center gap-6 mb-6">
+                            <div class="text-3xl font-bold text-teal-primary">R 2,450</div>
+                            <div class="text-gray-500 line-through">R 2,890</div>
+                            <div class="bg-red-100 text-red-800 text-sm font-semibold px-2 py-1 rounded">15% Off</div>
+                        </div>
+                        
+                        <!-- Quick Features -->
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">25+ Experiments</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">Teacher Guide Included</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">Safety Equipment</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">Assessment Tools</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Add to Cart -->
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <div class="flex items-center border border-gray-300 rounded-lg">
+                                <button class="px-3 py-2 text-gray-600 hover:text-gray-800" onclick="decreaseQuantity()">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="quantity" value="1" min="1" class="w-16 text-center border-0 focus:outline-none">
+                                <button class="px-3 py-2 text-gray-600 hover:text-gray-800" onclick="increaseQuantity()">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <button onclick="addToCart()" class="flex-1 bg-teal-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-600 transition-colors">
+                                <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                            </button>
+                            <button class="bg-gold-accent text-black px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                                <i class="fas fa-quote-left mr-2"></i>Get Quote
+                            </button>
+                        </div>
+                        
+                        <!-- Bulk Pricing -->
+                        <div class="bg-teal-50 border border-teal-200 rounded-lg p-4">
+                            <h3 class="font-semibold text-teal-800 mb-2">
+                                <i class="fas fa-users mr-2"></i>School Bulk Pricing Available
+                            </h3>
+                            <div class="text-sm text-teal-700 space-y-1">
+                                <div>5-9 kits: R 2,330 each (5% off)</div>
+                                <div>10-19 kits: R 2,205 each (10% off)</div>
+                                <div>20+ kits: R 2,080 each (15% off)</div>
+                            </div>
+                            <a href="../institutional/quote.html" class="text-teal-600 hover:text-teal-800 font-semibold text-sm mt-2 inline-block">
+                                Request school quote →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAPS Alignment Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">CAPS Curriculum Alignment</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    This kit provides comprehensive coverage of Senior Phase Natural Sciences topics with direct alignment to CAPS learning outcomes.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Grade 8 Alignment -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">8</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Grade 8 Topics</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-blue-700 mb-2">Matter & Materials</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Atoms as building blocks</li>
+                                <li>• Molecules and compounds</li>
+                                <li>• Chemical vs. physical changes</li>
+                                <li>• Conservation of atoms</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-blue-700 mb-2">Learning Outcomes</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Investigate atomic structure</li>
+                                <li>• Demonstrate chemical reactions</li>
+                                <li>• Apply conservation principles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grade 9 Alignment -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white font-bold text-xl">9</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Grade 9 Topics</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-green-700 mb-2">Chemical Systems</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• The Periodic Table</li>
+                                <li>• Chemical bonding</li>
+                                <li>• Acids, bases, and neutrals</li>
+                                <li>• Chemical reactions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-green-700 mb-2">Assessment Standards</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Predict chemical behavior</li>
+                                <li>• Explain bonding patterns</li>
+                                <li>• Test pH and reactions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cross-Curricular -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-link text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Integration</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-purple-700 mb-2">Mathematics Links</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Measurement and units</li>
+                                <li>• Ratio and proportion</li>
+                                <li>• Data analysis and graphs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <h4 class="font-semibold text-purple-700 mb-2">Technology Integration</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Digital measurement tools</li>
+                                <li>• Online data logging</li>
+                                <li>• Virtual simulations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiments Included -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">25+ Included Experiments</h2>
+                <p class="text-xl text-gray-600">
+                    Each experiment includes step-by-step instructions, safety guidelines, and assessment rubrics
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Basic Reactions -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-flask text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Basic Reactions</h3>
+                    </div>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Combustion reactions</li>
+                        <li>• Precipitation reactions</li>
+                        <li>• Gas evolution reactions</li>
+                        <li>• Color change reactions</li>
+                        <li>• Temperature change reactions</li>
+                    </ul>
+                </div>
+
+                <!-- Acids & Bases -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-vial text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Acids & Bases</h3>
+                    </div>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• pH indicator testing</li>
+                        <li>• Neutralization reactions</li>
+                        <li>• Making natural indicators</li>
+                        <li>• Acid-base titrations</li>
+                        <li>• Buffer systems</li>
+                    </ul>
+                </div>
+
+                <!-- Atomic Structure -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-atom text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Atomic Models</h3>
+                    </div>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Building atomic models</li>
+                        <li>• Electron shell arrangements</li>
+                        <li>• Isotope demonstrations</li>
+                        <li>• Periodic trends</li>
+                        <li>• Bonding patterns</li>
+                    </ul>
+                </div>
+
+                <!-- Chemical Bonds -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-link text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Chemical Bonds</h3>
+                    </div>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Ionic bond formation</li>
+                        <li>• Covalent bond models</li>
+                        <li>• Metallic bonding</li>
+                        <li>• Molecular shapes</li>
+                        <li>• Bond strength testing</li>
+                    </ul>
+                </div>
+
+                <!-- Solutions -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-tint text-cyan-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Solutions</h3>
+                    </div>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Solubility investigations</li>
+                        <li>• Concentration calculations</li>
+                        <li>• Crystallization</li>
+                        <li>• Separation techniques</li>
+                        <li>• Colligative properties</li>
+                    </ul>
+                </div>
+
+                <!-- Assessment -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-gold-accent/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-clipboard-check text-yellow-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Assessment Tools</h3>
+                    </div>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>• Practical assessment rubrics</li>
+                        <li>• Knowledge check quizzes</li>
+                        <li>• Lab report templates</li>
+                        <li>• Safety checklists</li>
+                        <li>• Portfolio guidelines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher Resources -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Comprehensive Teacher Support</h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Everything you need to successfully integrate chemistry experiments into your Natural Sciences teaching.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-book-open text-teal-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Complete Teacher Guide</h3>
+                                <p class="text-gray-600">120-page comprehensive guide with detailed experiment instructions, timing, and troubleshooting tips.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-file-alt text-teal-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Lesson Plan Templates</h3>
+                                <p class="text-gray-600">Ready-to-use lesson plans aligned with CAPS pacing and assessment requirements.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-teal-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Safety Protocols</h3>
+                                <p class="text-gray-600">Age-appropriate safety guidelines and risk assessments for all experiments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-video text-teal-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Video Demonstrations</h3>
+                                <p class="text-gray-600">Online access to video demonstrations for every experiment and technique.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">What's Included</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold text-gray-900">Laboratory Equipment</span>
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">Beakers, test tubes, measuring tools, safety equipment</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold text-gray-900">Chemical Reagents</span>
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">Safe, education-grade chemicals for all experiments</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold text-gray-900">Digital Resources</span>
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">Online portal with videos, worksheets, and assessments</p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold text-gray-900">Training Support</span>
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">Optional teacher training workshop available</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-teal-100 rounded-lg text-center">
+                        <div class="font-bold text-teal-800 text-lg">30 Students per Kit</div>
+                        <div class="text-sm text-teal-700">Designed for standard class sizes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Complete Your Science Lab</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center">
+                        <i class="fas fa-dna text-white text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Biology Investigation Kit</h3>
+                        <p class="text-gray-600 mb-4">Complement your chemistry studies with life sciences investigations.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-teal-primary font-bold">R 2,150</span>
+                            <a href="biology-investigation-kit.html" class="text-teal-primary hover:text-teal-600 font-semibold">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                        <i class="fas fa-magnet text-white text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Physics Fundamentals</h3>
+                        <p class="text-gray-600 mb-4">Explore electricity, magnetism, and energy transformations.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-teal-primary font-bold">R 2,350</span>
+                            <a href="physics-fundamentals.html" class="text-teal-primary hover:text-teal-600 font-semibold">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-microscope text-white text-4xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Advanced Microscopy Set</h3>
+                        <p class="text-gray-600 mb-4">High-quality microscopes and prepared slides for detailed observations.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-teal-primary font-bold">R 3,450</span>
+                            <a href="advanced-microscopy-set.html" class="text-teal-primary hover:text-teal-600 font-semibold">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-8 w-8 bg-teal-primary rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-lg">SC</span>
+                        </div>
+                        <span class="text-xl font-bold">Science Capital SA</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Premium CAPS-aligned science kits for South African schools.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../support/help.html" class="text-gray-400 hover:text-white">Help Center</a></li>
+                        <li><a href="../support/training.html" class="text-gray-400 hover:text-white">Teacher Training</a></li>
+                        <li><a href="../support/safety.html" class="text-gray-400 hover:text-white">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">For Schools</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../institutional/quote.html" class="text-gray-400 hover:text-white">Get Quote</a></li>
+                        <li><a href="../institutional/bulk-pricing.html" class="text-gray-400 hover:text-white">Bulk Pricing</a></li>
+                        <li><a href="../institutional/payment-terms.html" class="text-gray-400 hover:text-white">Payment Terms</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <div>011 234 5678</div>
+                        <div>products@sciencecapital.co.za</div>
+                        <div>Johannesburg, South Africa</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Science Capital SA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let quantity = 1;
+        
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById('quantity').value = quantity;
+        }
+        
+        function decreaseQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById('quantity').value = quantity;
+            }
+        }
+        
+        function addToCart() {
+            const productData = {
+                id: 'chemistry-starter-kit',
+                name: 'Chemistry Starter Kit',
+                price: 2450,
+                quantity: quantity,
+                image: 'chemistry-kit-thumb.jpg'
+            };
+            
+            // Get existing cart
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            
+            // Check if product already in cart
+            const existingItem = cart.find(item => item.id === productData.id);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push(productData);
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show success message
+            alert('Added to cart successfully!');
+        }
+        
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+        
+        // Initialize cart count on page load
+        updateCartCount();
+        
+        // Quantity input validation
+        document.getElementById('quantity').addEventListener('change', function(e) {
+            const value = parseInt(e.target.value);
+            if (value >= 1) {
+                quantity = value;
+            } else {
+                quantity = 1;
+                e.target.value = 1;
+            }
+        });
+    </script>
+</body>
+</html>
